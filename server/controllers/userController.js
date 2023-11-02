@@ -1,4 +1,4 @@
-import UserDetails from "../models/UserModel.js";
+import UserDetails from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
@@ -11,7 +11,7 @@ export const SignUp = async (req, res) => {
     if(!(name && email && password)) {
       return res.status(400).json("All fields are neccessary!");
     };
-    
+
     const oldUserDetails = await UserDetails.findOne({ email });
 
     if (oldUserDetails) {
