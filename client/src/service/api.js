@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:3000";
+const url = "http://localhost:3000" || "https://skygoal-2vfn.onrender.com";
 
 export const signup = async (data) => {
     try {
