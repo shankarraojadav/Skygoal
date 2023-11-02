@@ -8,7 +8,7 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const [data, setData] = useState();  
-  console.log(data)
+
   const handleChange = (e) => {
     e.preventDefault();
     setData({...data, [e.target.name]: e.target.value})
@@ -17,6 +17,7 @@ export default function Signup() {
   const handleSignup = async () => {
     const response = await signup(data);
     const { token } = response.data
+    console.log(token)
     if (response.status === 200) {
       localStorage.setItem("jwt", token);
       navigate("/home");

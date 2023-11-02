@@ -5,7 +5,7 @@ const url = "http://localhost:3000" || "https://skygoal-2vfn.onrender.com";
 export const signup = async (data) => {
     try {
         const response = await axios.post(`${url}/signup`, data);
-        console.log(response)
+        return response;
     } catch (error) {
         console.log(error)
     }
